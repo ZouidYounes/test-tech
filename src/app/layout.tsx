@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import "../../node_modules/@trilogy-ds/styles/dist/default/trilogy.css";
+import "swiper/css";
+import "swiper/css/pagination";
 
 
 const geistSans = localFont({
