@@ -1,5 +1,5 @@
 "use client"
-import { Button, Columns, ColumnsItem, Container, Icon, RowItem, Rows, Section, Text, Title } from "@trilogy-ds/react";
+import { Button, Columns, ColumnsItem, Container, RowItem, Rows, Section, Text, Title } from "@trilogy-ds/react";
 import Image from "next/image";
 import OutlineBox from "./ui/OutlineBox";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -10,6 +10,7 @@ import { Pagination } from "swiper/modules";
 
 
 export default function Home() {
+
     return (
         <>
             {/* Container 1 - Dark Themed (using test-blue) */}
@@ -62,7 +63,7 @@ export default function Home() {
             {/* Container 3 - Dark Themed (using test-blue) */}
             <Section className="bg-test-blue text-white">
                 <Container className="flex justify-center items-center mx-auto max-w-screen-lg">
-                    <Rows className="flex justify-center items-center content-center">
+                    <Rows className="flex justify-center items-center container">
                         <RowItem className="flex justify-center items-center">
                             <Image
                                 src="/icons/repair.svg"
@@ -81,17 +82,20 @@ export default function Home() {
                             <Button variant="PRIMARY">Trouver ma boutique</Button>
                         </RowItem>
                         <RowItem className="my-4 w-full">
-                            <OutlineBox title="Avec Bouygues Telecom, la réparation c’est…" className="my-6 w-full">
+                            <OutlineBox title="Avec Bouygues Telecom, la réparation c’est…" className="mt-6 w-full flex flex-wrap">
                                 <Swiper
                                     modules={[Pagination]}
+                                    style={{ maxWidth: '100%' }}
                                     pagination={{ clickable: true }}
                                     spaceBetween={20}
                                     slidesPerView={1}
                                     breakpoints={{
-                                        768: { slidesPerView: 2 },   // 2 slides for tablets
+                                        0: { slidesPerView: 1 },
+                                        640: { slidesPerView: 2 },   // 2 slides for tablets
+                                        768: { slidesPerView: 2 },   // 2 slides for medium screens
                                         1024: { slidesPerView: 4 },  // 4 slides for desktops
                                     }}
-                                    className="w-auto swiper-container"  // Ensure Swiper takes full width
+                                    className="w-full swiper-container ml-0 pl-0 relative -top-5"  // Prevent overflow with `overflow-hidden`
                                     loop={true}  // Enables continuous scrolling
                                 >
                                     {/* Slide 1 */}
@@ -102,7 +106,7 @@ export default function Home() {
                                                     <Image
                                                         src="/icons/users.svg"
                                                         alt="description of the SVG"
-                                                        className="rounded-lg w-12 sm:w-16 md:w-20 h-12 sm:h-16 md:h-20"  // Make icon responsive
+                                                        className="rounded-lg w-16 h-16 sm:w-14 sm:h-14 md:w-12 md:h-12"
                                                         height={50}
                                                         width={50}
                                                     />
@@ -125,7 +129,7 @@ export default function Home() {
                                                     <Image
                                                         src="/icons/france.svg"
                                                         alt="description of the SVG"
-                                                        className="rounded-lg w-12 sm:w-16 md:w-20 h-12 sm:h-16 md:h-20"  // Make icon responsive
+                                                        className="rounded-lg w-16 h-16 sm:w-14 sm:h-14 md:w-12 md:h-12"
                                                         height={50}
                                                         width={50}
                                                     />
@@ -148,7 +152,7 @@ export default function Home() {
                                                     <Image
                                                         src="/icons/calendar.svg"
                                                         alt="description of the SVG"
-                                                        className="rounded-lg w-12 sm:w-16 md:w-20 h-12 sm:h-16 md:h-20"  // Make icon responsive
+                                                        className="rounded-lg w-16 h-16 sm:w-14 sm:h-14 md:w-12 md:h-12"
                                                         height={50}
                                                         width={50}
                                                     />
@@ -173,7 +177,7 @@ export default function Home() {
                                                     <Image
                                                         src="/icons/repair_green.svg"
                                                         alt="description of the SVG"
-                                                        className="rounded-lg w-12 sm:w-16 md:w-20 h-12 sm:h-16 md:h-20"  // Make icon responsive
+                                                        className="rounded-lg w-16 h-16 sm:w-14 sm:h-14 md:w-12 md:h-12"
                                                         height={50}
                                                         width={50}
                                                     />
@@ -189,8 +193,10 @@ export default function Home() {
                                             </div>
                                         </div>
                                     </SwiperSlide>
+
                                 </Swiper>
                             </OutlineBox>
+
                         </RowItem>
                         <RowItem>
                             <Text>
