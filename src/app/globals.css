@@ -40,3 +40,34 @@ body {
   margin-top: 10px;  /* Adjust this value as needed */
   bottom: -10px;
 }
+
+.box {
+  height: 100%;
+}
+
+.accordion-header{
+  padding-right: 40px;
+  background-color: #F4F4F4;
+  
+}
+
+.accordion-header p{
+  padding-right: 40px;
+
+}
+
+.box img{
+  margin: 0;
+}
+
+.swiper-slide{
+  width: 100%;
+  max-width: 100%;
+}
+
+
+.swiper-container{
+  width: 100%;
+  max-width: 100%;
+}
+

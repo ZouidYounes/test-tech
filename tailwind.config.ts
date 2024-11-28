@@ -12,7 +12,9 @@ export default {
     extend: {
       colors: {
         'test-blue': '#25465F',
-        'test-grey': "#F4F4F4"
+        'test-grey': "#F4F4F4",
+        'test-dark': "#E4EAED",
+        'test-ligh-blue': "#0C7B91"
       },
     },
   },
