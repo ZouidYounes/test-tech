@@ -2,7 +2,7 @@ This is a test project for integrating AFD.tech
 
 It's a project made with Next.js
 
-First, pull the project and then install dependencies:
+First, clone the project and then install dependencies:
 > npm install
 
 before you can run the development environment:
